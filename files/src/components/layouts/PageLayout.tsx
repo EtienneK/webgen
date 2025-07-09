@@ -7,8 +7,7 @@ interface PageProps {
   children?: any
 }
 
-const Layout = (props: PageProps) => html`
-<!doctype html>
+const Layout = (props: PageProps) => html`<!doctype html>
 <html lang="${props.lang ?? 'en'}">
   <head>
     <meta charset="utf-8">
