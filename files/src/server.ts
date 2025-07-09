@@ -1,6 +1,6 @@
 import { serve } from '@hono/node-server'
 
-import createApp from './app/index.js'
+import createApp from './app/app.js'
 import config from './lib/config.js'
 
 const app = createApp(config)

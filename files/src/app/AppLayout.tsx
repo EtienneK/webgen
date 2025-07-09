@@ -11,7 +11,7 @@ export interface BaseLayoutProps {
   disablePico?: boolean
 }
 
-const BaseLayout = (props: BaseLayoutProps) => html`<!doctype html>
+const AppLayout = (props: BaseLayoutProps) => html`<!doctype html>
 <html lang="${props.lang ?? 'en'}">
   <head>
     <meta charset="utf-8">
@@ -29,4 +29,4 @@ const BaseLayout = (props: BaseLayoutProps) => html`<!doctype html>
 </html>
 `
 
-export default BaseLayout
+export default AppLayout

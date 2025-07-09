@@ -1,7 +1,7 @@
 import { testClient } from 'hono/testing'
 import { describe, it, expect } from 'vitest' // Or your preferred test runner
 
-import createApp from './index.js'
+import createApp from './app.js'
 import config from '../lib/config.js'
 
 const app = createApp({
