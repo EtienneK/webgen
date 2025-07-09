@@ -19,7 +19,7 @@ npm create -y hono@latest $1 -- --template=nodejs --install --pm=npm
 cd $1
 
 rm src/index.ts
-cp -r $SCRIPT_DIR/files/* .
+cp -rT $SCRIPT_DIR/files .
 
 set_package_json '.scripts.dev="NODE_ENV=development tsx watch src/server.ts"'
 set_package_json '.scripts.start="NODE_ENV=production node dist/server.js"'
@@ -58,8 +58,11 @@ npm run build
 
 # Git
 echo -e "\n# Config\nconfig/local*" >> .gitignore
+sed -i '/\.vscode\/\*/a \
+!.vscode/extensions.json' .gitignore
 
 git init
+
 git add .
 git commit -m "Initial commit"
 
