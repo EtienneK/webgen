@@ -46,7 +46,6 @@ mv _tsconfig.json tsconfig.json
 
 # Linting
 npm install --save-dev neostandard eslint
-npx neostandard --esm > eslint.config.js
 
 set_package_json '.scripts.lint="eslint"'
 set_package_json '.scripts."lint:fix"="eslint --fix"'
