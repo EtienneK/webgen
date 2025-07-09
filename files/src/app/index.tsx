@@ -2,7 +2,7 @@ import { Hono } from 'hono'
 import { serveStatic } from '@hono/node-server/serve-static'
 
 import type { Config } from '../lib/config.js'
-import Layout from '../components/layouts/PageLayout.js'
+import BaseLayout from './BaseLayout.js'
 
 function createApp (config: Config) {
   return new Hono()
@@ -12,12 +12,12 @@ function createApp (config: Config) {
 
     .get('/', (c) => {
       return c.html(
-        <Layout title='Starter template'>
+        <BaseLayout title='Starter template'>
           <main className='container'>
             <h1>Hello world!</h1>
             <p>This is a web application starter template.</p>
           </main>
-        </Layout>
+        </BaseLayout>
       )
     })
 

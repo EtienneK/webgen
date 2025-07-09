@@ -1,7 +1,7 @@
 import { html } from 'hono/html'
 import { css, Style } from 'hono/css'
 
-export interface PageProps {
+export interface BaseLayoutProps {
   title: string
   style?: Promise<string>
   lang?: string
@@ -11,7 +11,7 @@ export interface PageProps {
   disablePico?: boolean
 }
 
-const Layout = (props: PageProps) => html`<!doctype html>
+const BaseLayout = (props: BaseLayoutProps) => html`<!doctype html>
 <html lang="${props.lang ?? 'en'}">
   <head>
     <meta charset="utf-8">
@@ -28,4 +28,4 @@ const Layout = (props: PageProps) => html`<!doctype html>
 </html>
 `
 
-export default Layout
+export default BaseLayout
