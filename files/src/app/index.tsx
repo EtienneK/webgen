@@ -9,7 +9,7 @@ function createApp (config: Config) {
 
     .use('/static/css/pico.min.css', serveStatic({ path: './node_modules/@picocss/pico/css/pico.min.css' }))
     .use('/static/js/htmx.min.js', serveStatic({ path: './node_modules/htmx.org/dist/htmx.min.js' }))
-    .use('/static/*', serveStatic({ root: './static' }))
+    .use('/static/*', serveStatic({ root: './' }))
 
     .get('/', (c) => {
       return c.html(
