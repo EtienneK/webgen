@@ -1,10 +1,14 @@
 import { html } from 'hono/html'
-import { Style } from 'hono/css'
+import { css, Style } from 'hono/css'
 
-interface PageProps {
+export interface PageProps {
   title: string
+  style?: Promise<string>
   lang?: string
   children?: any
+
+  disableHtmx?: boolean
+  disablePico?: boolean
 }
 
 const Layout = (props: PageProps) => html`<!doctype html>
@@ -13,12 +17,10 @@ const Layout = (props: PageProps) => html`<!doctype html>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
-
     <title>${props.title}</title>
-
-    <script src="/static/js/htmx.min.js"></script>
-    <link rel="stylesheet" href="/static/css/pico.min.css">
-    ${<Style />}
+    ${!props.disableHtmx && html`<script src="/static/js/htmx.min.js"></script>`}
+    ${!props.disablePico && html`<link rel="stylesheet" href="/static/css/pico.min.css">`}
+    ${<Style>{props.style ?? css``}</Style>}
   </head>
   <body>
     ${props.children}
