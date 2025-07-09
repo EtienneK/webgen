@@ -25,8 +25,15 @@ set_package_json '.scripts.dev="NODE_ENV=development tsx watch src/server.ts"'
 set_package_json '.scripts.start="NODE_ENV=production node dist/server.js"'
 
 # Common packages
-npm install --save config zod
-npm install --save-dev @types/config
+npm install --save \
+    config \
+    zod \
+    htmx.org \
+    @picocss/pico
+
+npm install --save-dev \
+    @types/config \
+    typed-htmx
 
 # Testing
 npm install --save-dev vitest
@@ -57,4 +64,7 @@ git add .
 git commit -m "Initial commit"
 
 # Done
+echo
+echo
 echo ===== DONE =====
+echo
