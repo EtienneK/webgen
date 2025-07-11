@@ -57,7 +57,7 @@ npm run test
 npm run build
 
 # Git
-echo -e "\n# Config\nconfig/local*\n\n# Data\ndb/*\n!db/.gitkeep\n" >> .gitignore
+echo -e "\n# Config\nconfig/local*\n\n# Data\ndata/*\n!data/.gitkeep\n" >> .gitignore
 sed -i '/\.vscode\/\*/a \
 !.vscode/extensions.json' .gitignore
 
